@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import eagle.library.model.Member;
+
 @Stateless
 public class MemberEJB implements MemberInterface {
 

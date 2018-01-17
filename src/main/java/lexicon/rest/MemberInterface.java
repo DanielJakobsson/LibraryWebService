@@ -2,6 +2,8 @@ package lexicon.rest;
 
 import java.util.List;
 
+import eagle.library.model.Member;
+
 public interface MemberInterface {
 
 	void createMember(Member member);
