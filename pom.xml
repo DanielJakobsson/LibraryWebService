@@ -19,8 +19,8 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jboss.tools.examples</groupId>
-    <artifactId>jboss-javaee-webapp</artifactId>
+    <groupId>eagle.library</groupId>
+    <artifactId>eagle-library-webapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>WildFly Quickstarts: jboss-javaee-webapp</name>
