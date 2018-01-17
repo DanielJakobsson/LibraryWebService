@@ -1,4 +1,4 @@
-package lexicon.rest;
+package eagle.library.dao;
 
 import java.util.List;
 
