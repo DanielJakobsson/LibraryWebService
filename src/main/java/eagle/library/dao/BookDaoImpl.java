@@ -1,13 +1,16 @@
 package eagle.library.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import eagle.library.model.Book;
+import eagle.library.model.Publication;
 
 @Stateless
 public class BookDaoImpl implements BookDao {
@@ -27,7 +30,16 @@ public class BookDaoImpl implements BookDao {
 	public void update(Book book) {
 		em.merge(book);
 	}
-
+	
+	@Override
+	public Optional<Book> find(long id) {
+		try {
+			return Optional.of(em.find(Book.class, id));
+		} catch (NoResultException ignore) {
+		}
+		return Optional.empty();
+	}
+	
 	@Override
 	public List<Book> findByQuery(TypedQuery<Book> query) {
 		return query.getResultList();

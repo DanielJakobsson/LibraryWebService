@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
+import eagle.library.model.Member;
 import eagle.library.model.Publication;
 
 @Stateless
@@ -28,6 +29,15 @@ public class PublicationDaoImpl implements PublicationDao {
 
 	}
 
+	@Override
+	public Optional<Publication> find(long id) {
+		try {
+			return Optional.of(em.find(Publication.class, id));
+		} catch (NoResultException ignore) {
+		}
+		return Optional.empty();
+	}
+	
 	@Override
 	public List<Publication> findByQuery(TypedQuery<Publication> query) {
 		return query.getResultList();

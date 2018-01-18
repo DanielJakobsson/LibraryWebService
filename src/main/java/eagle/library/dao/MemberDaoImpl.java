@@ -26,7 +26,16 @@ public class MemberDaoImpl implements MemberDao {
 	public void update(Member book) {
 		em.merge(book);
 	}
-
+	
+	@Override
+	public Optional<Member> find(long id) {
+		try {
+			return Optional.of(em.find(Member.class, id));
+		} catch (NoResultException ignore) {
+		}
+		return Optional.empty();
+	}
+	
 	@Override
 	public List<Member> findByQuery(TypedQuery<Member> query) {
 		return query.getResultList();
