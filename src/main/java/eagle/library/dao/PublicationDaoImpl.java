@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
-import eagle.library.model.Member;
 import eagle.library.model.Publication;
 
 @Stateless
